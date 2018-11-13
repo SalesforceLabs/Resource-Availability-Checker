@@ -1,0 +1,58 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global"
+                controller="EventScheduler">
+    <aura:attribute name="startDate" type="DateTime" />
+    <aura:attribute name="endDate" type="DateTime" />
+    <aura:attribute name="event" type="Event" />
+    <aura:attribute name="users" type="User[]" />
+    <aura:attribute name="skills" type="Skill__c[]" />
+    <aura:attribute name="selectedSkillIds" type="String[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <article class="teaserCardDesktop forceBaseCard witsNewsTeaserCard">
+        <!--<div class="card-header">
+            <h2 class="card-header-title">
+                <span class="header-label">Smart Assigner
+                </span>
+            </h2>
+        </div>-->
+        <div class="card-body" style="padding:15px;">
+            <ui:inputDateTime aura:id="startDate" label="Start Date and Time" 
+                              value="{!v.startDate}" displayDatePicker="true" />
+            <ui:inputDateTime aura:id="endDate" label="End Date and Time" 
+                              value="{!v.endDate}" displayDatePicker="true" />
+            
+            <ui:inputSelect aura:id="skills" label="Skills Required" class="slds-select"
+                            change="{!c.onSelectChange}"  multiple="true">
+                <aura:iteration items="{!v.skills}" var="skill">
+                    <ui:inputSelectOption text="{!skill.Id}" label="{!skill.Name}"/>
+                </aura:iteration>
+            </ui:inputSelect>
+            <div style="text-align:right;">
+                <ui:button aura:id="button" buttonTitle="Click to get available sales rep for this time slot" 
+                           class="button" label="Check Available Resources" press="{!c.checkAvailableAssignee}"/>
+            </div>
+            <lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+            <aura:if isTrue="{!v.users == null || v.users.length == 0}">
+                <p class="slds-hide" aura:id="no-availability">No Resource is Available</p>
+            </aura:if>
+            <aura:iteration items="{!v.users}" var="user">
+                <article>
+                    <div class="card-header">
+                        <span class="header-icon">
+                            <span class="slds-avatar slds-avatar--circle slds-avatar--medium ">
+                                <img src="{!user.SmallPhotoUrl}" class="icon " />
+                            </span>
+                            <span class="header-label">
+                                <ui:outputText value="{!user.Name}"/>
+                            </span>
+                        </span>
+                        <span class="header-subtitle" >
+                            <button onclick="{!c.assignToEvent}" id="{!user.Id}"
+                                    class="slds-button slds-button--neutral uiButton">Assign</button>
+                        </span>
+                        
+                    </div>
+                </article>
+            </aura:iteration>
+        </div>
+    </article>
+</aura:component>

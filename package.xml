@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resource Availability Checker %28A Lightweight Scheduler%29</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <namespacePrefix>cxu_scheduler</namespacePrefix>
+    <types>
+        <members>EventScheduler</members>
+        <members>EventSchedulerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>EventScheduler</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Skill_Qualification__c.Skill__c</members>
+        <members>Skill_Qualification__c.Unique_Id__c</members>
+        <members>Skill_Qualification__c.User__c</members>
+        <members>Skill__c.Description__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Skill_Qualification__c</members>
+        <members>Skill__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Skill__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Skill_Qualification__c-Skill Qualification Layout</members>
+        <members>Skill__c-Skill Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Skill__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Skill_Qualification__c.Update_Unique_ID</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>Skill_Qualification__c.Prevent Duplicate Skill Assignment</members>
+        <name>WorkflowRule</name>
+    </types>
+    <version>44.0</version>
+</Package>

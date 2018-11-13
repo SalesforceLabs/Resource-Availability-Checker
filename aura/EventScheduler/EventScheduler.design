@@ -1,0 +1,6 @@
+<design:component label="Resource Availability Checker" >
+
+    <sfdc:objects >
+        <sfdc:object >Event</sfdc:object>
+    </sfdc:objects>
+</design:component>

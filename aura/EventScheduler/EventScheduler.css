@@ -1,0 +1,32 @@
+.THIS .button{
+    margin:10px 0;
+}
+
+.THIS .card-header {
+    
+    background-color: rgb(255, 255, 255);
+    color: rgb(22, 50, 92);
+    border: 1px solid rgb(216, 221, 230);
+    border-radius: .25rem;
+    
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+
+.THIS .slds-select {
+    height: 105px;
+}
+
+.THIS .header-icon {
+    
+    display: flex;
+    align-items: center;
+}
+
+.THIS .header-label {
+    margin-left: 10px;
+}
